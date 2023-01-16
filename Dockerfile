@@ -15,4 +15,4 @@ RUN mkdir -p $HOME
 RUN chown nonadmin $HOME
 USER nonadmin
 
-ENTRYPOINT [ "/app/run_action.py"]
+ENTRYPOINT [ "python", "/app/test_core.py"]

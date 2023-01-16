@@ -1,14 +1,17 @@
 name: A test github action for pygithubactions library
 description: A test github action for pygithubactions library
 inputs:
-  test_input1:
+  test_input:
     description: Test input
     required: false
     default: '1'
-  test_input2:
-    description: Test input
+  test_bool_input:
+    description: Test bool input
     required: true
     default: 'true'
+  test_multiline_input:
+    description: Test bool input
+    required: false
 branding:
   color: yellow
   icon: upload-cloud
