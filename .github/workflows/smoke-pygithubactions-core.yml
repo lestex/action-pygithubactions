@@ -1,0 +1,35 @@
+name: Smoke test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the action locally
+      uses: actions/checkout@v3
+      with:
+        path: test
+
+    - name: ✅ Smoke-test the locally checked out action
+      id: test
+      uses: ./test
+      # env:
+        # DEBUG: >-
+        #   true
+        # PATH: utter-nonsense
+      with:
+        test_input: test
+        test_bool_input: true
+        test_multiline_input: |
+          line1
+          line2
+          line3 el4
+
+    - name: ✅ Print outputs
+      run: |
+        echo ${{ steps.test.outputs.output }}
+        echo $ENVVAR1
