@@ -1,0 +1,25 @@
+name: Smoke test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the action locally
+      uses: actions/checkout@v3
+      with:
+        path: test
+
+    - name: ✅ Smoke-test the locally checked out action
+      uses: ./test
+      # env:
+        # DEBUG: >-
+        #   true
+        # PATH: utter-nonsense
+      with:
+        test_input1: test
+        test_input2: true

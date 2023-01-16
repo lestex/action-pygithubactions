@@ -1,0 +1,20 @@
+name: A test github action for pygithubactions library
+description: A test github action for pygithubactions library
+inputs:
+  test_input1:
+    description: Test input
+    required: false
+    default: '1'
+  test_input2:
+    description: Test input
+    required: true
+    default: 'true'
+branding:
+  color: yellow
+  icon: upload-cloud
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+  - ${{ inputs.test_input1 }}
+  - ${{ inputs.test_input2 }}
