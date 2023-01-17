@@ -9,7 +9,7 @@ inputs:
     description: Test bool input
     required: true
     default: 'true'
-  test_multiline_input:
+  test_bool_input:
     description: Test bool input
     required: false
 branding:
@@ -19,5 +19,6 @@ runs:
   using: docker
   image: Dockerfile
   args:
-  - ${{ inputs.test_input1 }}
-  - ${{ inputs.test_input2 }}
+  - ${{ inputs.test_input }}
+  - ${{ inputs.test_bool_input }}
+  - ${{ inputs.test_bool_input }}
