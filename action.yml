@@ -9,7 +9,7 @@ inputs:
     description: Test bool input
     required: true
     default: 'true'
-  test_bool_input:
+  test_multiline_input:
     description: Test bool input
     required: false
 branding:
