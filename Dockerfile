@@ -4,7 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 RUN apt update && apt upgrade -y
-RUN pip install pygithubactions==0.1.3
+RUN pip install pygithubactions==0.1.4
 
 WORKDIR /app
 COPY bin /app/
